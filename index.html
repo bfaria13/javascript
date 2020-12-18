@@ -1,13 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>My page</title>
+        <title>Example of JS interaction</title>
         <meta charset="utf-8">
+        <script type="text/javascript" src="src/main.js"></script>
+        <link rel="stylesheet" href="src/style.css">
     </head>
-    <body>
-        <script>
-            alert("my first JS")
-        </script>
-        <h1>My page</h1>
+    <body onload="load()">
+        <h1 class="title"><b>This simple code shows different tools to use with JS.</b></h1>
+        <ol type="1">
+            <li>The first alert is returned by JS function<i>load()</i> when page is loaded.</li>
+            <li>The button below demonstrates click on action controled by JS functions<i>clicked() and redirect()</i>.</li>
+            <p>a) returning message after click:</p>
+            <button class="button" type="button" onclick="clicked()">Click here</button>
+            <p id="thank"></p>
+            <p>b) redirecting to https://github.com/bfaria13/javascript:</p>
+            <button class="button" type='button' onclick="redirect()">Click here</button>
+            <p id="open"></p>
+
+            <li>Now mouse passing actions controlled by JS functions<i>change() and comeback()</i>.</li>
+            <p>a) changing message passing mouse:</p>
+            <p class="line" id="mouseover" onmouseover="change(this)"><b>Put mouse here</b></p>
+            <p>b) changing message just while mouse over:</p>
+            <p class="line" id="mouseover" onmouseover="change(this)" onmouseout="comeback(this)"><b>Put mouse here</b></p>
+
+            <li>Finally select option controlled by JS functions<i>f2change()</i>.</li>
+            <select class="button" onchange="f2change(this)">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+        </ol>
+
+        <div class="group">
+            <h3>Some interesting examples using JS functions:</h3>
+            <ol type="1">
+                <li><b>Calculator</b></li>
+                <select class="button2" id="select" onchange="input(this)">
+                    <option value="0">Choose a operation</option>
+                    <option value="1">Sum</option>
+                    <option value="2">Subtraction</option>
+                    <option value="3">Division</option>
+                    <option value="4">Multiplication</option>
+                </select>
+                <button class="button2" type='button' onclick="solve(this)">Calculate</button>
+                <p id="result" class="result"></p>
+            </ol>
+
+        </div>
     </body>
 </html>
